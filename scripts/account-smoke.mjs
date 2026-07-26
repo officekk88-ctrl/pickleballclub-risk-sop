@@ -15,7 +15,8 @@ const server = spawn(process.execPath, [nextBin, "start", "--hostname", "127.0.0
   env: { ...process.env, NODE_ENV: "production", APP_ORIGIN: origin }, stdio: "ignore",
 });
 
-const decode = (value = "") => value.replaceAll("&quot;", '"').replaceAll("&amp;", "&").replaceAll("&#x27;", "'");
+const htmlEntities = { "&quot;": '"', "&amp;": "&", "&#x27;": "'" };
+const decode = (value = "") => value.replace(/&(?:quot|amp|#x27);/g, (entity) => htmlEntities[entity]);
 function formDataFrom(html, marker) {
   const form = [...html.matchAll(/<form[\s\S]*?<\/form>/g)].map((match) => match[0]).find((value) => value.includes(marker));
   assert.ok(form, `未找到包含 ${marker} 的表单`);

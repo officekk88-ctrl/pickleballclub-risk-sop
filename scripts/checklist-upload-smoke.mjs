@@ -19,7 +19,8 @@ const server = spawn(process.execPath, [nextBin, "start", "--hostname", "127.0.0
   stdio: "ignore",
 });
 
-const decode = (value = "") => value.replaceAll("&quot;", '"').replaceAll("&amp;", "&").replaceAll("&#x27;", "'");
+const htmlEntities = { "&quot;": '"', "&amp;": "&", "&#x27;": "'" };
+const decode = (value = "") => value.replace(/&(?:quot|amp|#x27);/g, (entity) => htmlEntities[entity]);
 
 function adminCookie() {
   const email = process.env.MVP_ADMIN_EMAIL || "admin@example.com";
