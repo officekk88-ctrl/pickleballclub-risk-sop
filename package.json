@@ -44,25 +44,25 @@
   },
   "dependencies": {
     "@napi-rs/canvas": "0.1.80",
-    "mammoth": "1.12.0",
-    "next": "16.2.12",
+    "mammoth": "1.12.1",
+    "next": "16.3.3",
     "openai": "6.49.0",
-    "pdfkit": "0.17.2",
-    "pg": "8.16.3",
-    "postcss": "8.5.23",
+    "pdfkit": "0.20.1",
+    "pg": "8.23.0",
+    "postcss": "8.5.26",
     "react": "19.2.8",
     "react-dom": "19.2.8",
     "read-excel-file": "^8.0.3",
     "server-only": "0.0.1",
-    "sharp": "0.35.3",
+    "sharp": "0.35.4",
     "tesseract.js": "7.0.0",
-    "unpdf": "1.6.2",
-    "zod": "4.3.5"
+    "unpdf": "1.8.1",
+    "zod": "4.4.3"
   },
   "devDependencies": {
     "@types/node": "24.10.1",
     "@types/pdfkit": "0.17.5",
-    "@types/pg": "8.15.6",
+    "@types/pg": "8.23.1",
     "@types/react": "19.2.7",
     "@types/react-dom": "19.2.3",
     "eslint": "9.39.2",
@@ -73,7 +73,7 @@
   "overrides": {
     "brace-expansion": "5.0.8",
     "minimatch": "10.2.5",
-    "postcss": "8.5.23",
-    "sharp": "0.35.3"
+    "postcss": "8.5.26",
+    "sharp": "0.35.4"
   }
 }
